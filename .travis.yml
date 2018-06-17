@@ -8,6 +8,6 @@ script:
   - docker images moussavdb/nodejs
   
 after_success:
-  - docker login -e="$DOCKER_EMAIL" -u="$DOCKER_USERNAME" -p="$DOCKER_PASSWORD";
+  - docker login -u="moussavdb" -p="$DOCKER_PASSWORD";
     docker push moussavdb/nodejs:latest;
-    docker push moussavdb/nodejs:$TRAVIS_BUILD_NUMBER;
+    docker push moussavdb/nodejs:build_$TRAVIS_BUILD_NUMBER;
