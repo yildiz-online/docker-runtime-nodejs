@@ -3,7 +3,7 @@ services:
   - docker
 
 before_install:
-  - docker build -t moussavdb/nodejs:latest -t moussavdb/nodejs:$TRAVIS_BUILD_NUMBER .
+  - docker build -t moussavdb/nodejs:latest -t moussavdb/nodejs:build_$TRAVIS_BUILD_NUMBER .
 script:
   - docker images moussavdb/nodejs
   
